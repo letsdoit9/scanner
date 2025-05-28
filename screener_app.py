@@ -11,7 +11,7 @@ st.title("📈 Nifty500 Real-Time Screener")
 
 @st.cache_data(ttl=600)
 def load_data():
-    url = "https://assets.upstox.com/market-quote/instruments/exchange/nse_eq.csv"
+    url = "https://assets.upstox.com/market-quote/instruments/exchange/NSE.csv.gz"
     df = pd.read_csv(url)
     df = df[df['instrument_key'].str.contains("NSE_EQ")]
     return df
